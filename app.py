@@ -1093,8 +1093,8 @@ st.markdown("""
         </p>
         <p style='margin-top: 10px; font-size: 0.9em;'>
             Made with ❤️ for Data Science Portfolio | 
-            <a href='https://github.com/yourusername' target='_blank'>GitHub</a> | 
-            <a href='https://linkedin.com/in/yourprofile' target='_blank'>LinkedIn</a>
+            <a href='https://github.com/SendPain11' target='_blank'>GitHub</a> | 
+            <a href='https://linkedin.com/in/https://www.linkedin.com/in/sendy-prismana-nurferian-95a27b213/' target='_blank'>LinkedIn</a>
         </p>
     </div>
     """, unsafe_allow_html=True)
