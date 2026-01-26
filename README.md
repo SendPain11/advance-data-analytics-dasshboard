@@ -185,9 +185,9 @@ advanced-analytics-dashboard/
 ├── data/                       # Optional: Your datasets
 │   └── custom_data.csv
 │
-└── screenshots/                # Optional: For README
-    ├── dashboard.png
-    └── ml_models.png
+└── media/                # Optional: For README
+    ├── screnshoot.png
+    └── video.mkv
 ```
 
 ## 💻 Usage Guide
@@ -434,6 +434,3 @@ streamlit run app.py --server.runOnSave true
 
 **See You Next Time all!**
 ---
-
-![GitHub Stars](https://img.shields.io/github/stars/SendPain11/advanced-analytics-dashboard?style=social)
-![GitHub Forks](https://img.shields.io/github/forks/SendPain11/advanced-analytics-dashboard?style=social)
