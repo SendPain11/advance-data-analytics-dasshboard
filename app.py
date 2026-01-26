@@ -10,8 +10,8 @@ Features:
 - Statistical Hypothesis Testing
 - Time Series Analysis
 
-Author: Your Name
-GitHub: github.com/yourusername
+Author: Sendy Prisman Nurferian
+GitHub: github.com/SendPain11
 """
 
 import streamlit as st
