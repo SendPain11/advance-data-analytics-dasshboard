@@ -564,9 +564,18 @@ if "Predictive Modeling" in analysis_type and data_source == "Generate Sample Sa
                 st.metric("MAE", f"{metrics['MAE']:.2f}",
                          help="Mean Absolute Error (lower is better)")
     
-    # Best model
-    best_model_name = max(results, key=lambda x: results[x]['R²'])
-    st.success(f"🏆 **Best Model:** {best_model_name} (R² = {results[best_model_name]['R²']:.4f})")
+  # Best model calculation
+    if results:
+        best_model_name = max(results, key=lambda x: results[x]['R²'])
+        st.success(f"🏆 **Best Model:** {best_model_name} (R² = {results[best_model_name]['R²']:.4f})")
+        
+        # Detailed visualization
+        st.subheader("📈 Detailed Model Analysis")
+        model_choice = st.selectbox("Select model to visualize", list(results.keys()))
+        
+        # ... keep the rest of your tab and visualization logic here ...
+    else:
+        st.error("No models were successfully trained. Please check your data source or pre-trained model path.")
     
     # Detailed visualization
     st.subheader("📈 Detailed Model Analysis")
