@@ -1,5 +1,5 @@
 """
-Advanced Data Analytics & Machine Learning Dashboard from SendPain11
+Advanced Data Analytics & Machine Learning Dashboard
 ====================================================
 A comprehensive analytics platform showcasing Python, ML, and Data Science capabilities
 
@@ -10,16 +10,24 @@ Features:
 - Statistical Hypothesis Testing
 - Time Series Analysis
 
-Author: Sendy Prismana Nurferian
-GitHub: github.com/SendPain11
+Author: Your Name
+GitHub: github.com/yourusername
 """
 
 import streamlit as st
 import pandas as pd
 import numpy as np
-import plotly.express as px
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
+
+# Import dengan error handling
+try:
+    import plotly.express as px
+    import plotly.graph_objects as go
+    from plotly.subplots import make_subplots
+except ImportError as e:
+    st.error(f"❌ Plotly import error: {e}")
+    st.info("Please ensure plotly is installed: pip install plotly>=5.17.0")
+    st.stop()
+
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
@@ -564,23 +572,14 @@ if "Predictive Modeling" in analysis_type and data_source == "Generate Sample Sa
                 st.metric("MAE", f"{metrics['MAE']:.2f}",
                          help="Mean Absolute Error (lower is better)")
     
-  # Best model calculation
-    if results:
-        best_model_name = max(results, key=lambda x: results[x]['R²'])
-        st.success(f"🏆 **Best Model:** {best_model_name} (R² = {results[best_model_name]['R²']:.4f})")
-        
-        # Detailed visualization
-        st.subheader("📈 Detailed Model Analysis")
-        model_choice = st.selectbox("Select model to visualize", list(results.keys()))
-        
-        # ... keep the rest of your tab and visualization logic here ...
-    else:
-        st.error("No models were successfully trained. Please check your data source or pre-trained model path.")
+    # Best model
+    best_model_name = max(results, key=lambda x: results[x]['R²'])
+    st.success(f"🏆 **Best Model:** {best_model_name} (R² = {results[best_model_name]['R²']:.4f})")
     
     # Detailed visualization
     st.subheader("📈 Detailed Model Analysis")
     
-    model_choice = st.selectbox("Select model to visualize", list(results.keys()))
+    model_choice = st.selectbox("Select model to visualize", list(results.keys()), key="model_viz_choice")
     
     tab1, tab2 = st.tabs(["Predictions vs Actual", "Residual Analysis"])
     
@@ -1094,8 +1093,8 @@ st.markdown("""
         </p>
         <p style='margin-top: 10px; font-size: 0.9em;'>
             Made with ❤️ for Data Science Portfolio | 
-            <a href='https://github.com/SendPain1' target='_blank'>GitHub</a> | 
-            <a href='https://www.linkedin.com/in/sendy-prismana-nurferian-95a27b213/' target='_blank'>LinkedIn</a>
+            <a href='https://github.com/yourusername' target='_blank'>GitHub</a> | 
+            <a href='https://linkedin.com/in/yourprofile' target='_blank'>LinkedIn</a>
         </p>
     </div>
     """, unsafe_allow_html=True)
