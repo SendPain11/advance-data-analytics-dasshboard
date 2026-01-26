@@ -1,0 +1,2 @@
+# Tambahkan packages.txt jika perlu:
+build-essential
